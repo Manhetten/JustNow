@@ -1,6 +1,6 @@
 fun main() {
     val name = "Alex"
-    val time = 15920
+    val time = 880
 
     println(agoToText(name, time))
 }
@@ -24,7 +24,7 @@ fun minutesAgo(seconds: Int): String {
 
     return when {
         secToMin % 10 == 1 && secToMin % 100 != 11 -> "$secToMin ${correctMinutes}у назад"
-        secToMin % 10 in 2..4 -> "$secToMin ${correctMinutes}ы назад"
+        secToMin % 10 in 2..4 && secToMin % 100 > 20 -> "$secToMin ${correctMinutes}ы назад"
         else -> "$secToMin $correctMinutes назад"
     }
 }
